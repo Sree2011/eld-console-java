@@ -1,0 +1,31 @@
+name: Generate & Deploy Javadoc
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '24' # or your version
+
+      - name: Generate Javadoc
+        run: |
+          mkdir -p docs
+          javadoc -d docs src/*.java
+
+      - name: Commit and Push Docs
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add docs/
+          git commit -m "📚 Auto-update Javadoc $(git rev-parse --short HEAD)"
+          git push
+        continue-on-error: true
