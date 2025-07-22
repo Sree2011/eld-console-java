@@ -1,0 +1,28 @@
+title: Economic load dispatch using java
+description: Console based java application for ELD
+
+plugins:
+  - jekyll-relative-links
+  - jekyll-remote-theme
+  - jekyll-include-cache
+
+
+relative_links:
+  enabled: true
+  collections: true
+include:
+    - README.md
+    - LICENSE.md
+    - COPYING.md
+    - CODE_OF_CONDUCT.md
+    - CONTRIBUTING.md
+    - ISSUE_TEMPLATE.md
+    - PULL_REQUEST_TEMPLATE.md
+
+remote_theme: pages-themes/time-machine
+
+#theme: minimal-mistakes-jekyll
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
