@@ -1,24 +1,23 @@
 /**
- * Stores details about each generator and calculates its cost
- * for a given output.
+ * Stores details about each generator and calculates its cost for a given output.
  *
- * Fields:
- * <hr>
- *  <ul>
- *      <li>gen_id (int)- The generator id(a unique identifier)</li>
- *      <li>min_capacity (int) - The minimum power capacity of the generator</li>
- *      <li>max_capacity (int) - The maximum power capacity of the generator</li>
- *      <li>a,b,c (float) - the cost coefficients of the generator</li>
- *      <li>current_power (float) - The current power of the generator</li>
- * </ul>
- *
- * Methods:
- *
+ * <p>Fields include:
  * <ul>
- *  <li>public Generator(int gen_id, int min_capacity, int max_capacity, float a, float b, float c, float current_power) - the parameterised constructor</li>
- *  <li>public static float calculateCost(float power) - Calculates cost for the given power using cost coefficients</li>
- *  <li>public static boolean isWithinLimits(power) - Checks if the given power is within the generator's minimum and maximum capacity limits</li>
+ *   <li><code>gen_id</code> — Unique identifier for the generator</li>
+ *   <li><code>min_capacity</code> and <code>max_capacity</code> — Generation capacity limits</li>
+ *   <li><code>a</code>, <code>b</code>, <code>c</code> — Cost function coefficients</li>
+ *   <li><code>current_power</code> — Current power output (optional, may be updated later)</li>
  * </ul>
+ *
+ * <p>Methods:
+ * <ul>
+ *   <li><code>Generator(...)</code> — Parameterized constructor for generator setup</li>
+ *   <li><code>float calculateCost(float power)</code> — Calculates generation cost</li>
+ *   <li><code>boolean isWithinLimits(float power)</code> — Checks capacity constraints</li>
+ * </ul>
+ *
+ * @author Sree Sai Nandini
+ * @version 1.0
  */
 public class Generator{
     int gen_id;
