@@ -3,18 +3,22 @@
  * for a given output.
  *
  * Fields:
- * -------
- *  -    gen_id (int)- The generator id(a unique identifier)
- *  -    min_capacity (int) - The minimum power capacity of the generator
- *  -    max_capacity (int) - The maximum power capacity of the generator
- *  -    a,b,c (float) - the cost coefficients of the generator
- *  -    current_power (float) - The current power of the generator
+ * <hr>
+ *  <ul>
+ *      <li>gen_id (int)- The generator id(a unique identifier)</li>
+ *      <li>min_capacity (int) - The minimum power capacity of the generator</li>
+ *      <li>max_capacity (int) - The maximum power capacity of the generator</li>
+ *      <li>a,b,c (float) - the cost coefficients of the generator</li>
+ *      <li>current_power (float) - The current power of the generator</li>
+ * </ul>
  *
  * Methods:
  * --------
- *  -    public Generator(int gen_id, int min_capacity, int max_capacity, float a, float b, float c, float current_power) - the parameterised constructor
- *  -    public static float calculateCost(float power) - Calculates cost for the given power using cost coefficients
- *  -    public static boolean isWithinLimits(power) - Checks if the given power is within the generator's minimum and maximum capacity limits
+ * <ul>
+ *  <li>public Generator(int gen_id, int min_capacity, int max_capacity, float a, float b, float c, float current_power) - the parameterised constructor</li>
+ *  <li>public static float calculateCost(float power) - Calculates cost for the given power using cost coefficients</li>
+ *  <li>public static boolean isWithinLimits(power) - Checks if the given power is within the generator's minimum and maximum capacity limits</li>
+ * </ul>
  */
 public class Generator{
     int gen_id;
