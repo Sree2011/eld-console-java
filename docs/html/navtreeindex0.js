@@ -1,0 +1,20 @@
+var NAVTREEINDEX0 =
+{
+"_e_l_d_calculator_8java.html":[1,0,0,0],
+"_generator_8java.html":[1,0,0,1],
+"_input_loader_8java.html":[1,0,0,2],
+"_main_8java.html":[1,0,0,3],
+"annotated.html":[0,0],
+"class_generator.html":[0,0,0],
+"class_generator.html#a21a32ab0594730861c5bd4b499cf4585":[0,0,0,1],
+"class_generator.html#a22e7ac6f432a48ff48a71995ce6bbc40":[0,0,0,2],
+"class_generator.html#a4a6d746adf53c47e7bb48bd5fc1c75a6":[0,0,0,0],
+"class_input_loader.html":[0,0,1],
+"classes.html":[0,1],
+"dir_68267d1309a1af8e8297ef4c3efbcdba.html":[1,0,0],
+"files.html":[1,0],
+"functions.html":[0,2,0],
+"functions_func.html":[0,2,1],
+"index.html":[],
+"pages.html":[]
+};
