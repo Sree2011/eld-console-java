@@ -16,6 +16,10 @@ jobs:
         with:
           java-version: '24' # or your version
           distribution: 'temurin'
+      - name: Run Checkstyle
+        run: |
+          curl -O https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.12.1/checkstyle-10.12.1-all.jar
+          java -jar checkstyle-10.12.1-all.jar -c checkstyle.xml src/ || true
 
       - name: Generate Javadoc
         run: |
