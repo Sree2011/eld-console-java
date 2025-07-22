@@ -13,7 +13,7 @@
  * </ul>
  *
  * Methods:
- * --------
+ *
  * <ul>
  *  <li>public Generator(int gen_id, int min_capacity, int max_capacity, float a, float b, float c, float current_power) - the parameterised constructor</li>
  *  <li>public static float calculateCost(float power) - Calculates cost for the given power using cost coefficients</li>

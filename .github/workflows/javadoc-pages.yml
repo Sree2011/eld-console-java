@@ -19,7 +19,6 @@ jobs:
 
       - name: Generate Javadoc
         run: |
-          mkdir -p docs
           javadoc -d docs src/*.java
 
       - name: Commit and Push Docs
