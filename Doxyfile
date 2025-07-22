@@ -1,0 +1,10 @@
+PROJECT_NAME           = "ELD Console Java"
+OUTPUT_DIRECTORY       = docs
+INPUT                  = src
+FILE_PATTERNS          = *.java
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
+JAVADOC_AUTOBRIEF      = YES
+GENERATE_LATEX         = NO
+MARKDOWN_SUPPORT       = YES
+GENERATE_HTML          = YES
