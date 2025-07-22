@@ -32,16 +32,16 @@ public class Generator{
      * @param a(float) - the cost coefficient(A) of the generator
      * @param b(float) - the cost coefficient(B) of the generator
      * @param c(float) - the cost coefficient(C) of the generator
-     * @attr current_power (float) - The current power of the generator
+     *
      */
-    public Generator(int gen_id, int min_capacity, int max_capacity, float a, float b, float c, float current_power) {
+    public Generator(int gen_id, int min_capacity, int max_capacity, float a, float b, float c) {
         this.gen_id = gen_id;
         this.min_capacity = min_capacity;
         this.max_capacity = max_capacity;
         this.a = a;
         this.b = b;
         this.c = c;
-        this.current_power = current_power;
+
     }
 
 
@@ -57,6 +57,7 @@ public class Generator{
 
     /**
      * Checks if the given power is within the limits of the generator power capacity
+     * @param power the given power
      * @return true if given power is within the limits, else false
      */
     public boolean isWithinLimits(float power){

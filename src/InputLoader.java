@@ -12,11 +12,14 @@ import java.util.*;
  * @version 1.0
  */
 public class InputLoader{
+
     /**
      * Accepts the no.of generators and generator parameters for each one as inputs from the user ,
      * creates generator object for each generator, adds all of them into arraylist and returns the arraylist.
+     *
+     * @return genlist the arraylist of generator objects
      */
-    public static void loadFromUser(){
+    public static ArrayList<Generator> loadFromUser(){
         ArrayList<Generator> genlist = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter total power demand:");
@@ -32,11 +35,11 @@ public class InputLoader{
             int min_capacity = sc.nextInt();
             System.out.println("Enter the maximum power capacity: ");
             int max_capacity = sc.nextInt();
-            System.out.println("Enter the current power of the generator: ");
-            float current_power = sc.nextFloat();
-            Generator gobj = new Generator(i, min_capacity, max_capacity, a, b, c, current_power);
+
+            Generator gobj = new Generator(i, min_capacity, max_capacity, a, b, c);
             genlist.add(gobj);
         }
+        return genlist;
     }
 
 }
