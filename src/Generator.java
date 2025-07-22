@@ -1,20 +1,16 @@
 /**
  * Stores details about each generator and calculates its cost for a given output.
  *
- * <p>Fields include:
- * <ul>
- *   <li><code>gen_id</code> — Unique identifier for the generator</li>
- *   <li><code>min_capacity</code> and <code>max_capacity</code> — Generation capacity limits</li>
- *   <li><code>a</code>, <code>b</code>, <code>c</code> — Cost function coefficients</li>
- *   <li><code>current_power</code> — Current power output (optional, may be updated later)</li>
- * </ul>
+ * Fields:
+ * - gen_id: Unique identifier for the generator
+ * - min_capacity / max_capacity: Generation capacity limits (MW)
+ * - a, b, c: Cost function coefficients (float)
+ * - current_power: Current power output (float)
  *
- * <p>Methods:
- * <ul>
- *   <li><code>Generator(...)</code> — Parameterized constructor for generator setup</li>
- *   <li><code>float calculateCost(float power)</code> — Calculates generation cost</li>
- *   <li><code>boolean isWithinLimits(float power)</code> — Checks capacity constraints</li>
- * </ul>
+ * Methods:
+ * - Generator(...) — Constructor for generator setup
+ * - float calculateCost(float power) — Calculates generation cost
+ * - boolean isWithinLimits(float power) — Checks if power is within capacity limits
  *
  * @author Sree Sai Nandini
  * @version 1.0
