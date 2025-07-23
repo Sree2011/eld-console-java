@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "ELD Console Java", "index.html", [
+    [ "ELD Console based App", "index.html", "index" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

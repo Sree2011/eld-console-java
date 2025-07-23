@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['generator_0',['Generator',['../class_generator.html',1,'']]]
+  ['eldcalculator_0',['ELDCalculator',['../class_e_l_d_calculator.html',1,'']]]
 ];
