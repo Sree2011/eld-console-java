@@ -21,7 +21,7 @@ include:
 
 #remote_theme: pages-themes/time-machine
 
-theme: minimal-mistakes-jekyll
+theme: just-the-docs
 markdown: kramdown
 kramdown:
   input: GFM
@@ -29,4 +29,4 @@ kramdown:
   auto_ids: true
 
 mermaid:
-  enable: true
+  version: "10.1.0"
