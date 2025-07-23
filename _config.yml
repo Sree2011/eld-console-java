@@ -19,7 +19,7 @@ include:
     - ISSUE_TEMPLATE.md
     - PULL_REQUEST_TEMPLATE.md
 
-remote_theme: jpages-themes/dinky
+remote_theme: pages-themes/dinky
 
 #theme: just-the-docs
 markdown: kramdown
