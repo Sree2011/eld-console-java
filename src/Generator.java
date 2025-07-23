@@ -26,7 +26,6 @@ public class Generator{
     int min_capacity;
     int max_capacity;
     float a,b,c;
-    float current_power;
 
 
     /**
@@ -65,10 +64,123 @@ public class Generator{
      * @param power the given power
      * @return true if given power is within the limits, else false
      */
-    public boolean isWithinLimits(float power){
-        if (min_capacity <= power && power <= max_capacity){
-            return true;
+    public float validatePower(float power) {
+        if (power < min_capacity) {
+            return min_capacity;
+        } else if (power > max_capacity) {
+            return max_capacity;
+        } else {
+            return power;
         }
-        return false;
+    }
+
+
+
+    /**
+     * Getter method for generator id
+     * @return gen_id Generator id
+     */
+    public int getGen_id() {
+        return gen_id;
+    }
+
+    /**
+     * Setter method for generator id
+     * @param gen_id Generator id
+     */
+    public void setGen_id(int gen_id) {
+        this.gen_id = gen_id;
+    }
+
+    /**
+     * Getter method for minimum generator capacity
+     * @return min_capacity Minimum generator capacity
+     */
+    public int getMin_capacity() {
+        return min_capacity;
+    }
+
+    /**
+     * Setter method for minimum generator capacity
+     * @param min_capacity Minimum generator capacity
+     */
+    public void setMin_capacity(int min_capacity) {
+        this.min_capacity = min_capacity;
+    }
+
+    /**
+     * Getter method for maximum generator capacity
+     * @return min_capacity Maximum generator capacity
+     */
+    public int getMax_capacity() {
+        return max_capacity;
+    }
+
+    /**
+     * Setter method for maximum generator capacity
+     * @param min_capacity Maximum generator capacity
+     */
+    public void setMax_capacity(int max_capacity) {
+        this.max_capacity = max_capacity;
+    }
+
+    /**
+     * Returns the quadratic coefficient 'a' of the generator's cost function.
+     * This term represents the fixed cost component.
+     *
+     * @return the 'a' coefficient
+     */
+    public float getA() {
+        return a;
+    }
+
+    /**
+     * Sets the quadratic coefficient 'a' of the generator's cost function.
+     * Use this to update the fixed cost component.
+     *
+     * @param a the new value for the 'a' coefficient
+     */
+    public void setA(float a) {
+        this.a = a;
+    }
+
+    /**
+     * Returns the linear coefficient 'b' of the generator's cost function.
+     * This term scales linearly with power output.
+     *
+     * @return the 'b' coefficient
+     */
+    public float getB() {
+        return b;
+    }
+
+    /**
+     * Sets the linear coefficient 'b' of the generator's cost function.
+     * This updates how cost changes linearly with generation.
+     *
+     * @param b the new value for the 'b' coefficient
+     */
+    public void setB(float b) {
+        this.b = b;
+    }
+
+    /**
+     * Returns the quadratic coefficient 'c' of the generator's cost function.
+     * This term controls how cost curves with power output.
+     *
+     * @return the 'c' coefficient
+     */
+    public float getC() {
+        return c;
+    }
+
+    /**
+     * Sets the quadratic coefficient 'c' of the generator's cost function.
+     * Use this to define the rate of cost curvature.
+     *
+     * @param c the new value for the 'c' coefficient
+     */
+    public void setC(float c) {
+        this.c = c;
     }
 }
