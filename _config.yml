@@ -1,32 +1,34 @@
-title: Economic load dispatch using java
-description: Console based java application for ELD
+title: ELD based console app
+description: Codes, equations and algorithms for economic load dispatch in power systems.
 
 plugins:
   - jekyll-relative-links
   - jekyll-remote-theme
   - jekyll-include-cache
 
-
 relative_links:
   enabled: true
   collections: true
 include:
-    - README.md
-    - LICENSE.md
-    - COPYING.md
-    - CODE_OF_CONDUCT.md
-    - CONTRIBUTING.md
-    - ISSUE_TEMPLATE.md
-    - PULL_REQUEST_TEMPLATE.md
+ - CONTRIBUTING.md
+  - README.md
+  - LICENSE.md
+  - COPYING.md
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
+  - ISSUE_TEMPLATE.md
+  - PULL_REQUEST_TEMPLATE.md
 
-remote_theme: just-the-docs/just-the-docs
+remote_theme: pages-themes/dinky
 
-#theme: just-the-docs
+mermaid:
+  version: 11.4.1
+
 markdown: kramdown
 kramdown:
   input: GFM
-  math_engine: mathjax
   auto_ids: true
 
-mermaid:
-  version: "10.1.0"
+mathjax:
+  enable: true
+  use_preview: true
