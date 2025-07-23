@@ -1,4 +1,4 @@
-# ELD Console based App
+# ELD Console based App{#mainpage}
 
 ## Class diagram
 
