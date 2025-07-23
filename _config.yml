@@ -25,4 +25,8 @@ remote_theme: pages-themes/time-machine
 markdown: kramdown
 kramdown:
   input: GFM
+  math_engine: mathjax
   auto_ids: true
+
+mermaid:
+  enable: true
