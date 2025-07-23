@@ -107,40 +107,25 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="mainpage"></a></p>
 <h1><a class="anchor" id="autotoc_md0"></a>
-Class diagram</h1>
-<div class="fragment"><div class="line">classDiagram</div>
-<div class="line">    class Generator {</div>
-<div class="line">        - int gen_id</div>
-<div class="line">        - float min_capacity</div>
-<div class="line">        - float max_capacity</div>
-<div class="line">        - float a</div>
-<div class="line">        - float b</div>
-<div class="line">        - float c</div>
-<div class="line">        + float validatePower(float power)</div>
-<div class="line">        + float getA()</div>
-<div class="line">        + void setA(float a)</div>
-<div class="line">        + float getB()</div>
-<div class="line">        + void setB(float b)</div>
-<div class="line">        + float getC()</div>
-<div class="line">        + void setC(float c)</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    class InputLoader{</div>
-<div class="line">        + ArrayList&lt;Generator&gt; loadFromUser()</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    class ELDCalculator {</div>
-<div class="line">        - float lambda</div>
-<div class="line">        - Generator[] genArray</div>
-<div class="line">        - float tot_demand</div>
-<div class="line">        - float tolerance</div>
-<div class="line">        - int max_iterations</div>
-<div class="line">        + float[] lambdaIteration()</div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">    Generator &lt;|-- ELDCalculator : uses</div>
-<div class="line">    Generator &lt;|-- InputLoader : uses</div>
-</div><!-- fragment --> </div></div><!-- PageDoc -->
+🚀 Features</h1>
+<ul>
+<li>Modular generator modeling with cost coefficients</li>
+<li>Load validation and dispatch optimization</li>
+<li>Clean documentation powered by Doxygen</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md1"></a>
+📦 Modules</h1>
+<ul>
+<li><code><a class="el" href="class_generator.html" title="Stores details about each generator and calculates its cost for a given output.">Generator</a></code> – Handles cost and capacity constraints</li>
+<li><code><a class="el" href="class_input_loader.html" title="Utility class for handling user input related to generator parameters.">InputLoader</a></code> – Handles user input</li>
+<li><code><a class="el" href="class_e_l_d_calculator.html" title="Calculator class for performing Lambda Iteration-based Economic Load Dispatch.">ELDCalculator</a></code> – Calculates economic load dispatch power using lambda iteration</li>
+<li><code>Main</code> – The console-based application that connects all modules</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+👩‍💻 Author</h1>
+<p>Created by Sree Sai Nandini <br  />
+ Azure-certified | Portfolio-driven | Joyful engineering ✨ </p>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->
