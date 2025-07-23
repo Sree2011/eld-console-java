@@ -110,7 +110,7 @@ public class Generator{
 
     /**
      * Getter method for maximum generator capacity
-     * @return min_capacity Maximum generator capacity
+     * @return max_capacity Maximum generator capacity
      */
     public int getMax_capacity() {
         return max_capacity;
@@ -118,7 +118,7 @@ public class Generator{
 
     /**
      * Setter method for maximum generator capacity
-     * @param min_capacity Maximum generator capacity
+     * @param max_capacity Maximum generator capacity
      */
     public void setMax_capacity(int max_capacity) {
         this.max_capacity = max_capacity;
