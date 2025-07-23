@@ -19,9 +19,9 @@ include:
     - ISSUE_TEMPLATE.md
     - PULL_REQUEST_TEMPLATE.md
 
-remote_theme: pages-themes/time-machine
+#remote_theme: pages-themes/time-machine
 
-#theme: minimal-mistakes-jekyll
+theme: minimal-mistakes-jekyll
 markdown: kramdown
 kramdown:
   input: GFM
