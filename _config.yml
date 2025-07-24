@@ -23,6 +23,7 @@ remote_theme: pages-themes/dinky
 
 mermaid:
   version: 11.4.1
+  enable: true
 
 markdown: kramdown
 kramdown:
