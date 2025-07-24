@@ -51,6 +51,7 @@ classDiagram
 
     Generator <|-- ELDCalculator : uses
     Generator <|-- InputLoader : uses
+end
 ```
 
 
