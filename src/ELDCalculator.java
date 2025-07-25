@@ -1,9 +1,7 @@
 /**
  * Calculator class for performing Lambda Iteration-based Economic Load Dispatch.
- * 
- * @reference H. Saadat, *Power System Analysis*, 3rd ed. Maple Valley, WA: PSA Publishing, 2010.
- * Used to guide the cost function model and iterative convergence logic.
-
+ * This class computes the optimal power distribution among generators
+ * to minimize the total cost while meeting a specified power demand.
  */
 public class ELDCalculator {
     private float lambda;

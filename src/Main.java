@@ -1,5 +1,16 @@
-
+/**
+ * Main class to run the Economic Load Dispatch (ELD) calculator.
+ * This class initializes the generator data and total demand,
+ * then invokes the ELDCalculator to compute the optimal power distribution.
+ */
 public class Main{
+
+    /**
+     * Main method to execute the ELD calculation.
+     * It loads generator data from a CSV file or user input,
+     * @param args command line arguments (not used)
+     * @throws Exception if there is an error in loading data or performing calculations
+     */
     public static void main(String[] args) {
         Generator[] genlist = InputLoader.loadFromCSV("input/10-generator_system.csv").toArray(new Generator[0]);
 
