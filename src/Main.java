@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * Main class to run the Economic Load Dispatch (ELD) calculator.
  * 
@@ -20,17 +22,24 @@ public class Main{
      * 
      */
     public static void main(String[] args) {
-        Generator[] genlist = InputLoader.loadFromCSV("input/10-generator_system.csv").toArray(new Generator[0]);
+        // Generator[] genlist = InputLoader.loadFromCSV("input/10-generator_system.csv").toArray(new Generator[0]);
+        // if (genlist.length == 0) {
+        //     System.out.println("No valid generators loaded. Exiting.");
+        //     return;
+        // }
 
-
-        // ArrayList<Generator> genlist = InputLoader.loadFromUser();
-        if (genlist.length == 0) {
+        ArrayList<Generator> genlist = InputLoader.loadFromUser();
+        if (genlist.isEmpty()) {
             System.out.println("No valid generators loaded. Exiting.");
             return;
         }
 
        // Generator[] genlist = genlist.toArray(new Generator[0]);
-        System.out.println("Total generators loaded: " + genlist.length);
+        // System.out.println("Total generators loaded: " + genlist.length);
+        System.out.println("Total generators loaded: " + genlist.size());
+
+        // Print generator details
+        System.out.println("Generator Details:");
         System.out.printf("%-12s %-15s %-15s %-12s %-12s %-12s%n", 
                   "Gen ID", "Min Capacity", "Max Capacity", "a", "b", "c");
         System.out.println("--------------------------------------------------------------------------");
@@ -40,7 +49,8 @@ public class Main{
                             gen.getA(), gen.getB(), gen.getC());
         }
         float totalDemand = 2000f;
-        ELDCalculator eldCalculator = new ELDCalculator(genlist.length, genlist, totalDemand);
+        // ELDCalculator eldCalculator = new ELDCalculator(genlist.length, genlist, totalDemand);
+        ELDCalculator eldCalculator = new ELDCalculator(genlist.size(), genlist.toArray(new Generator[0]), totalDemand);
         
         float[] ELDispatch = eldCalculator.lambdaIteration();
         for(int i = 0; i < ELDispatch.length; i++) {
