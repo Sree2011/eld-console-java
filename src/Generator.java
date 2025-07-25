@@ -19,6 +19,9 @@
  *
  * @author Sree Sai Nandini
  * @version 1.0
+ * @see ELDCalculator
+ * @see InputLoader
+ * @see Main
  */
 
 public class Generator{

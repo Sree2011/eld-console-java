@@ -1,7 +1,14 @@
 /**
  * @brief Main class to run the Economic Load Dispatch (ELD) calculator.
+ * 
  * This class initializes the generator data and total demand,
  * then invokes the ELDCalculator to compute the optimal power distribution.
+ * 
+ * @author Sree Sai Nandini
+ * @version 1.0
+ * @see Generator
+ * @see InputLoader
+ * @see ELDCalculator
  */
 public class Main{
 
