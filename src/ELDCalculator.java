@@ -1,6 +1,9 @@
-
 /**
  * Calculator class for performing Lambda Iteration-based Economic Load Dispatch.
+ * 
+ * @reference H. Saadat, *Power System Analysis*, 3rd ed. Maple Valley, WA: PSA Publishing, 2010.
+ * Used to guide the cost function model and iterative convergence logic.
+
  */
 public class ELDCalculator {
     private float lambda;
@@ -8,7 +11,7 @@ public class ELDCalculator {
     private int numGenerators;
     private float totDemand;
     private float tolerance;
-    private int maxIterations;
+    private final int maxIterations;
 
     /**
      * Constructor to initialize ELDCalculator with generator data and demand.
@@ -22,8 +25,8 @@ public class ELDCalculator {
         this.genArray = genArray;
         this.numGenerators = numGenerators;
         this.totDemand = totDemand;
-        this.tolerance = 0.001f;
-        this.maxIterations = 100;
+        this.tolerance = 0.0001f;
+        this.maxIterations = 10000;
     }
 
     /**
@@ -44,29 +47,48 @@ public class ELDCalculator {
                 float c = genArray[i].getC();
 
                 P[i] = (lambda - b) / (2 * c);
-                P[i] = genArray[i].validatePower(P[i]);
+                P[i] = genArray[i].validatePower(P[i]);  // Clamp within min/max limits
                 totalPower += P[i];
             }
 
-            if (Math.abs(totalPower - totDemand) <= tolerance) {
+            float mismatch = totDemand - totalPower;
+
+            if (Math.abs(mismatch) <= tolerance) {
                 System.out.println("✅ Converged Economic Load Dispatch values:");
                 for (int i = 0; i < P.length; i++) {
                     System.out.printf("Generator %d : %.3f kW%n", i + 1, P[i]);
                 }
                 break;
-            } else if (totalPower < totDemand) {
-                lambda += 0.01f;
-            } else {
-                lambda -= 0.01f;
+            }
+
+            // Adaptive lambda step based on mismatch
+            float stepSize = mismatch * 0.0001f;
+            lambda += stepSize;
+
+            // Log progress every 100 iterations
+            if (iteration % 100 == 0) {
+                System.out.printf("🔄 Iteration %d | λ = %.4f | Total Gen = %.2f | Mismatch = %.4f%n",
+                                  iteration, lambda, totalPower, mismatch);
             }
 
             iteration++;
         }
 
         if (iteration == maxIterations) {
-            System.out.println("⚠️ Max iterations reached. Solution may not be optimal.");
+            float finalMismatch = totDemand - sum(P);
+            System.out.printf("⚠️ Max iterations reached.\nFinal λ: %.4f | Total Gen: %.2f | Demand: %.2f | Diff: %.4f%n",
+                              lambda, sum(P), totDemand, finalMismatch);
         }
 
         return P;
+    }
+
+    // Helper method to sum array values
+    private float sum(float[] array) {
+        float total = 0f;
+        for (float value : array) {
+            total += value;
+        }
+        return total;
     }
 }

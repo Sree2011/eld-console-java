@@ -6,7 +6,7 @@
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs';
     mermaid.initialize({ startOnLoad: true, theme: 'light' });
   </script>
-  
+
 # ⚡ ELD Console Simulator {#mainpage}
 
 Welcome to the documentation for the Economic Load Dispatch (ELD) Java console app.  
@@ -61,3 +61,6 @@ end
 [View code documentation](./docs/html/index.html)
 
 
+## References
+1. [IEEE 10-GENERATOR 39-BUS SYSTEM](https://www.researchgate.net/file.PostFileLoader.html?id=55019916f079ed153f8b4598&assetKey=AS:273740330405917@1442276188879)
+2. Saadat, Power System Analysis, 3rd ed. Maple Valley, WA: PSA Publishing, 2010.

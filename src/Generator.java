@@ -55,7 +55,7 @@ public class Generator{
      * @return C_p the cost for the given power
      */
     public float calculateCost(float power){
-        float C_p = (a*(power * power)+(b*p)+c);
+        float C_p = (a*(power * power)+(b*power)+c);
         return C_p;
     }
 

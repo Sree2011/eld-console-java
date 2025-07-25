@@ -21,24 +21,29 @@ public class InputLoader{
      */
     public static ArrayList<Generator> loadFromUser(){
         ArrayList<Generator> genlist = new ArrayList<>();
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter total power demand:");
-        int total_demand = sc.nextInt();
-        System.out.println("Enter total no.of generators: ");
-        int no_of_generators = sc.nextInt();
-        for(int i=0;i<no_of_generators;i++){
-            System.out.println("Enter the cost coefficients (a,b,c) of the generators one by one in new lines: ");
-            float a = sc.nextFloat();
-            float b = sc.nextFloat();
-            float c = sc.nextFloat();
-            System.out.println("Enter the minimum power capacity: ");
-            int min_capacity = sc.nextInt();
-            System.out.println("Enter the maximum power capacity: ");
-            int max_capacity = sc.nextInt();
+        try(Scanner sc = new Scanner(System.in);){
+            System.out.println("Enter total power demand:");
+            int total_demand = sc.nextInt();
+            System.out.println("Enter total no.of generators: ");
+            int no_of_generators = sc.nextInt();
+            for(int i=0;i<no_of_generators;i++){
+                System.out.println("Enter the cost coefficients (a,b,c) of the generators one by one in new lines: ");
+                float a = sc.nextFloat();
+                float b = sc.nextFloat();
+                float c = sc.nextFloat();
+                System.out.println("Enter the minimum power capacity: ");
+                int min_capacity = sc.nextInt();
+                System.out.println("Enter the maximum power capacity: ");
+                int max_capacity = sc.nextInt();
 
-            Generator gobj = new Generator(i, min_capacity, max_capacity, a, b, c);
-            genlist.add(gobj);
+                Generator gobj = new Generator(i, min_capacity, max_capacity, a, b, c);
+                genlist.add(gobj);
+            }
         }
+            catch(Exception e){
+                System.out.println("Invalid input! Please enter valid numbers.");
+                return new ArrayList<>(); // Return empty list on error}
+            }
         return genlist;
     }
 
