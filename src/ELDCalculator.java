@@ -81,6 +81,11 @@ public class ELDCalculator {
         return P;
     }
 
+    /**
+     * Helper method to sum the values of an array.
+     * @param array the array to sum
+     * @return total sum of the array values
+     */
     // Helper method to sum array values
     private float sum(float[] array) {
         float total = 0f;
