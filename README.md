@@ -13,10 +13,24 @@ Welcome to the documentation for the Economic Load Dispatch (ELD) Java console a
 This tool models generator cost functions and dispatch logic for power systems.
 
 ## Equations
-
-$$
+Power at each generator,
+> $$
 P_i = \frac{lambda - b_i}{2*c_i}
 $$
+
+Total generated power,
+> $$
+\sum_{i=1}^{n} P_i = P_{\text{total}}
+$$
+
+Main condition to be true for lambda iteration to end:
+> $$
+P_{\text{total}} + P_{\text{tolerance}} >= P_{\text{demand}}
+$$
+or
+
+> no.of iterations > max_iterations
+
 
 ## Class diagram
 
@@ -40,6 +54,7 @@ classDiagram
     
     class InputLoader{
         + ArrayList<Generator> loadFromUser()
+        + ArrayList<Generator> loadFromCSV(String filepath)
     }
     
     class ELDCalculator {
@@ -49,16 +64,27 @@ classDiagram
         - float tolerance
         - int max_iterations
         + float[] lambdaIteration()
+        + float sum(float[] array)
     }
+
+    class Main{
+        + static void main(String[] args)
+    }
+
+
 
     Generator <|-- ELDCalculator : uses
     Generator <|-- InputLoader : uses
+    ELDCalculator <|-- Main : uses
+    InputLoader <|-- Main : uses
+    Generator <|-- Main : uses
 end
 ```
 
 
+
 ## Documentation
-[View code documentation](./docs/html/index.html)
+[View code documentation](./docs/html/classes.html)
 
 
 ## References
