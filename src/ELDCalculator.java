@@ -1,5 +1,5 @@
 /**
- * @brief Calculator class for performing Lambda Iteration-based Economic Load Dispatch.
+ * Calculator class for performing Lambda Iteration-based Economic Load Dispatch.
  *
  * This class computes the optimal power distribution among generators
  * to minimize the total cost while meeting a specified power demand.

@@ -1,5 +1,5 @@
 /**
- * @brief Main class to run the Economic Load Dispatch (ELD) calculator.
+ * Main class to run the Economic Load Dispatch (ELD) calculator.
  * 
  * This class initializes the generator data and total demand,
  * then invokes the ELDCalculator to compute the optimal power distribution.
