@@ -1,5 +1,5 @@
 /**
- * Stores details about each generator and calculates its cost for a given output.
+ * @brief Stores details about each generator and calculates its cost for a given output.
  *
  * <p><b>Fields:</b></p>
  * <ul>
