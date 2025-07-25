@@ -8,9 +8,9 @@
 public class ELDCalculator {
     private float lambda;
     private Generator[] genArray;
-    private int numGenerators;
-    private float totDemand;
-    private float tolerance;
+    private final int numGenerators;
+    private final float totDemand;
+    private final float tolerance;
     private final int maxIterations;
 
     /**
@@ -67,7 +67,7 @@ public class ELDCalculator {
 
             // Log progress every 100 iterations
             if (iteration % 100 == 0) {
-                System.out.printf("🔄 Iteration %d | λ = %.4f | Total Gen = %.2f | Mismatch = %.4f%n",
+                System.out.printf("Iteration %d | lambda = %.4f | Total Gen = %.2f | Mismatch = %.4f%n",
                                   iteration, lambda, totalPower, mismatch);
             }
 
@@ -76,7 +76,7 @@ public class ELDCalculator {
 
         if (iteration == maxIterations) {
             float finalMismatch = totDemand - sum(P);
-            System.out.printf("⚠️ Max iterations reached.\nFinal λ: %.4f | Total Gen: %.2f | Demand: %.2f | Diff: %.4f%n",
+            System.out.printf("⚠️ Max iterations reached.\nFinal lambda: %.4f | Total Gen: %.2f | Demand: %.2f | Diff: %.4f%n",
                               lambda, sum(P), totDemand, finalMismatch);
         }
 
