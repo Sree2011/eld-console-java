@@ -32,7 +32,7 @@ public class Main{
                             gen.getGen_id(), gen.getMin_capacity(), gen.getMax_capacity(),
                             gen.getA(), gen.getB(), gen.getC());
         }
-    float totalDemand = 2000f;
+        float totalDemand = 2000f;
         ELDCalculator eldCalculator = new ELDCalculator(genlist.length, genlist, totalDemand);
         
         float[] ELDispatch = eldCalculator.lambdaIteration();

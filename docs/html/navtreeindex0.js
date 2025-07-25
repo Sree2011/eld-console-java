@@ -25,6 +25,7 @@ var NAVTREEINDEX0 =
 "class_generator.html#ac039541cb186f5598e31141bb7b0724a":[1,0,1,4],
 "class_generator.html#ad65868f2e435ab1ce8319fc6396419b1":[1,0,1,6],
 "class_input_loader.html":[1,0,2],
+"class_main.html":[1,0,3],
 "classes.html":[1,1],
 "dir_68267d1309a1af8e8297ef4c3efbcdba.html":[2,0,0],
 "files.html":[2,0],
