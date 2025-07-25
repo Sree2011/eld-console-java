@@ -48,32 +48,41 @@ public class InputLoader{
         return genlist;
     }
 
-public static ArrayList<Generator> loadFromCSV(String filePath) {
-    ArrayList<Generator> genlist = new ArrayList<>();
-    try (Scanner sc = new Scanner(new File(filePath))) {
-        // Skip header if present
-        if (sc.hasNextLine()) sc.nextLine(); 
+    /**
+     * Loads generator data from a CSV file.
+     * Each line in the file should contain generator parameters in the format:
+     * gen_id, min_capacity, max_capacity, a, b, c
+     *
+     * @param filePath path to the CSV file
+     * @return ArrayList of Generator objects
+     */
+    public static ArrayList<Generator> loadFromCSV(String filePath) {
+        ArrayList<Generator> genlist = new ArrayList<>();
+        try (Scanner sc = new Scanner(new File(filePath))) {
+            // Skip header if present
+            if (sc.hasNextLine()) sc.nextLine(); 
 
-        while (sc.hasNextLine()) {
-            String line = sc.nextLine();
-            String[] parts = line.split(",");
-            if (parts.length != 6) continue; // Skip invalid lines
+            while (sc.hasNextLine()) {
+                String line = sc.nextLine();
+                String[] parts = line.split(",");
+                if (parts.length != 6) continue; // Skip invalid lines
 
-            int gen_id = Integer.parseInt(parts[0].trim());
-            int min_capacity = Integer.parseInt(parts[1].trim());
-            int max_capacity = Integer.parseInt(parts[2].trim());
-            float a = Float.parseFloat(parts[3].trim());
-            float b = Float.parseFloat(parts[4].trim());
-            float c = Float.parseFloat(parts[5].trim());
+                int gen_id = Integer.parseInt(parts[0].trim());
+                int min_capacity = Integer.parseInt(parts[1].trim());
+                int max_capacity = Integer.parseInt(parts[2].trim());
+                float a = Float.parseFloat(parts[3].trim());
+                float b = Float.parseFloat(parts[4].trim());
+                float c = Float.parseFloat(parts[5].trim());
 
-            Generator gobj = new Generator(gen_id, min_capacity, max_capacity, a, b, c);
-            genlist.add(gobj);
+                Generator gobj = new Generator(gen_id, min_capacity, max_capacity, a, b, c);
+                genlist.add(gobj);
+            }
+        } catch (Exception e) {
+            System.out.println("Error reading from CSV: " + e.getMessage());
+            return new ArrayList<>(); // Corrected: return empty list, not float[]
         }
-    } catch (Exception e) {
-        System.out.println("Error reading from CSV: " + e.getMessage());
-        return new ArrayList<>(); // Corrected: return empty list, not float[]
+        return genlist;
     }
-    return genlist;
-}
 
-}
+    }
+
