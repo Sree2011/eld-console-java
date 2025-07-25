@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"ELDCalculator"},{"p":"<Unnamed>","l":"Generator"},{"p":"<Unnamed>","l":"InputLoader"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"ELDCalculator"},{"p":"<Unnamed>","l":"Generator"},{"p":"<Unnamed>","l":"InputLoader"},{"p":"<Unnamed>","l":"Main"}];updateSearchResults();
