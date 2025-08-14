@@ -91,4 +91,4 @@ end
 
 ## References
 1. [IEEE 10-GENERATOR 39-BUS SYSTEM](https://www.researchgate.net/file.PostFileLoader.html?id=55019916f079ed153f8b4598&assetKey=AS:273740330405917@1442276188879)
-2. Saadat, Power System Analysis, 3rd ed. Maple Valley, WA: PSA Publishing, 2010.
+2. [Saadat, Power System Analysis, 3rd ed. Maple Valley, WA: PSA Publishing, 2010](https://www.saadat.us/psabook3rd.htm).
