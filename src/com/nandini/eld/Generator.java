@@ -1,3 +1,4 @@
+package com.nandini.eld;
 /**
  * Stores details about each generator and calculates its cost for a given output.
  *
@@ -25,10 +26,12 @@
  */
 
 public class Generator{
-    int gen_id;
-    int min_capacity;
-    int max_capacity;
-    float a,b,c;
+    int genId;
+    int minCapacity;
+    int maxCapacity;
+    float a;
+    float b;
+    float c;
 
 
     /**
@@ -41,10 +44,10 @@ public class Generator{
      * @param c(float) - the cost coefficient(C) of the generator
      *
      */
-    public Generator(int gen_id, int min_capacity, int max_capacity, float a, float b, float c) {
-        this.gen_id = gen_id;
-        this.min_capacity = min_capacity;
-        this.max_capacity = max_capacity;
+    public Generator(int genId, int minCapacity, int maxCapacity, float a, float b, float c) {
+        this.genId = genId;
+        this.minCapacity = minCapacity;
+        this.maxCapacity = maxCapacity;
         this.a = a;
         this.b = b;
         this.c = c;
@@ -55,11 +58,10 @@ public class Generator{
     /**
      * Calculates the cost for given power based on the cost function of the generator
      * @param power The power for which cost needs to be calculated
-     * @return C_p the cost for the given power
+     * @return the cost for the given power
      */
     public float calculateCost(float power){
-        float C_p = (a*(power * power)+(b*power)+c);
-        return C_p;
+        return (a * (power * power) + (b * power) + c);
     }
 
     /**
@@ -68,10 +70,10 @@ public class Generator{
      * @return true if given power is within the limits, else false
      */
     public float validatePower(float power) {
-        if (power < min_capacity) {
-            return min_capacity;
-        } else if (power > max_capacity) {
-            return max_capacity;
+        if (power < minCapacity) {
+            return minCapacity;
+        } else if (power > maxCapacity) {
+            return maxCapacity;
         } else {
             return power;
         }
@@ -83,48 +85,48 @@ public class Generator{
      * Getter method for generator id
      * @return gen_id Generator id
      */
-    public int getGen_id() {
-        return gen_id;
+    public int getGenId() {
+        return genId;
     }
 
     /**
      * Setter method for generator id
      * @param gen_id Generator id
      */
-    public void setGen_id(int gen_id) {
-        this.gen_id = gen_id;
+    public void setGenId(int genId) {
+        this.genId = genId;
     }
 
     /**
      * Getter method for minimum generator capacity
      * @return min_capacity Minimum generator capacity
      */
-    public int getMin_capacity() {
-        return min_capacity;
+    public int getMinCapacity() {
+        return minCapacity;
     }
 
     /**
      * Setter method for minimum generator capacity
      * @param min_capacity Minimum generator capacity
      */
-    public void setMin_capacity(int min_capacity) {
-        this.min_capacity = min_capacity;
+    public void setMinCapacity(int minCapacity) {
+        this.minCapacity = minCapacity;
     }
 
     /**
      * Getter method for maximum generator capacity
      * @return max_capacity Maximum generator capacity
      */
-    public int getMax_capacity() {
-        return max_capacity;
+    public int getMaxCapacity() {
+        return maxCapacity;
     }
 
     /**
      * Setter method for maximum generator capacity
      * @param max_capacity Maximum generator capacity
      */
-    public void setMax_capacity(int max_capacity) {
-        this.max_capacity = max_capacity;
+    public void setMaxCapacity(int maxCapacity) {
+        this.maxCapacity = maxCapacity;
     }
 
     /**

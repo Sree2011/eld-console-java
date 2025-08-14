@@ -1,3 +1,5 @@
+package com.nandini.eld;
+import java.util.logging.*;
 /**
  * Calculator class for performing Lambda Iteration-based Economic Load Dispatch.
  *
@@ -13,11 +15,13 @@
 
 public class ELDCalculator {
     private float lambda;
-    private Generator[] genArray;
+    private final Generator[] genArray;
     private final int numGenerators;
     private final float totDemand;
     private final float tolerance;
     private final int maxIterations;
+    private static final Logger LOGGER = Logger.getLogger(ELDCalculator.class.getName());
+
 
     /**
      * Constructor to initialize ELDCalculator with generator data and demand.
@@ -41,7 +45,7 @@ public class ELDCalculator {
      * @return array of dispatched power values for each generator
      */
     public float[] lambdaIteration() {
-        float[] P = new float[numGenerators];
+        float[] powerArray = new float[numGenerators];
         int iteration = 0;
 
         while (iteration < maxIterations) {
@@ -52,17 +56,17 @@ public class ELDCalculator {
                 float b = genArray[i].getB();
                 float c = genArray[i].getC();
 
-                P[i] = (lambda - b) / (2 * c);
-                P[i] = genArray[i].validatePower(P[i]);  // Clamp within min/max limits
-                totalPower += P[i];
+                powerArray[i] = (lambda - b) / (2 * c);
+                powerArray[i] = genArray[i].validatePower(powerArray[i]);  // Clamp within min/max limits
+                totalPower += powerArray[i];
             }
 
             float mismatch = totDemand - totalPower;
 
-            if (Math.abs(mismatch) <= tolerance) {
-                System.out.println("✅ Converged Economic Load Dispatch values:");
-                for (int i = 0; i < P.length; i++) {
-                    System.out.printf("Generator %d : %.3f kW%n", i + 1, P[i]);
+            if (Math.abs(mismatch) <= tolerance  && LOGGER.isLoggable(Level.INFO)) {
+                LOGGER.log(Level.INFO,"✅ Converged Economic Load Dispatch values:");
+                for (int i = 0; i < powerArray.length; i++) {
+                    LOGGER.log(Level.INFO,String.format("Generator %d : %.3f kW%n", i + 1, powerArray[i]));
                 }
                 break;
             }
@@ -72,21 +76,21 @@ public class ELDCalculator {
             lambda += stepSize;
 
             // Log progress every 100 iterations
-            if (iteration % 100 == 0) {
-                System.out.printf("Iteration %d | lambda = %.4f | Total Gen = %.2f | Mismatch = %.4f%n",
-                                  iteration, lambda, totalPower, mismatch);
+            if (iteration % 100 == 0 && LOGGER.isLoggable(Level.INFO)) {
+                LOGGER.log(Level.INFO, String.format("Iteration %d | lambda = %.4f | Total Gen = %.2f | Mismatch = %.4f%n",
+                                  iteration, lambda, totalPower, mismatch));
             }
 
             iteration++;
         }
 
-        if (iteration == maxIterations) {
-            float finalMismatch = totDemand - sum(P);
-            System.out.printf("⚠️ Max iterations reached.\nFinal lambda: %.4f | Total Gen: %.2f | Demand: %.2f | Diff: %.4f%n",
-                              lambda, sum(P), totDemand, finalMismatch);
+        if (iteration == maxIterations  && LOGGER.isLoggable(Level.WARNING)) {
+            float finalMismatch = totDemand - sum(powerArray);
+            LOGGER.log(Level.WARNING,String.format("⚠️ Max iterations reached.%nFinal lambda: %.4f | Total Gen: %.2f | Demand: %.2f | Diff: %.4f%n",
+                              lambda, sum(powerArray), totDemand, finalMismatch));
         }
 
-        return P;
+        return powerArray;
     }
 
     /**
